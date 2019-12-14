@@ -1,0 +1,5 @@
+/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/GravitySimulator.dir
+/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/package_source.dir
+/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/package.dir
