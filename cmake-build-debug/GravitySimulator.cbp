@@ -146,6 +146,12 @@
 		<Unit filename="/home/hugo/repo/github/GravitySimulator/src/RenderSystem.hpp">
 			<Option target="GravitySimulator"/>
 		</Unit>
+		<Unit filename="/home/hugo/repo/github/GravitySimulator/src/Timer.cpp">
+			<Option target="GravitySimulator"/>
+		</Unit>
+		<Unit filename="/home/hugo/repo/github/GravitySimulator/src/Timer.hpp">
+			<Option target="GravitySimulator"/>
+		</Unit>
 		<Unit filename="/home/hugo/repo/github/GravitySimulator/src/main.cpp">
 			<Option target="GravitySimulator"/>
 		</Unit>

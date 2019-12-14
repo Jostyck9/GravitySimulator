@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hugo/repo/github/GravitySimulator/src/Entity.cpp" "/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/GravitySimulator.dir/src/Entity.cpp.o"
   "/home/hugo/repo/github/GravitySimulator/src/RenderSystem.cpp" "/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/GravitySimulator.dir/src/RenderSystem.cpp.o"
+  "/home/hugo/repo/github/GravitySimulator/src/Timer.cpp" "/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/GravitySimulator.dir/src/Timer.cpp.o"
   "/home/hugo/repo/github/GravitySimulator/src/main.cpp" "/home/hugo/repo/github/GravitySimulator/cmake-build-debug/CMakeFiles/GravitySimulator.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

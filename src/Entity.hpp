@@ -6,10 +6,14 @@
 #define GRAVITYSIMULATOR_ENTITY_HPP
 
 #include <utility>
+#include <SFML/Graphics/Color.hpp>
+#include <ostream>
 
 class Entity {
 public:
-    Entity(int maxMass = 100, std::pair<float, float> maxPosition = std::make_pair(800, 800), std::pair<float, float> maxSpeed = std::make_pair(100, 100));
+    Entity(int maxMass = 100, std::pair<float, float> maxPosition = std::make_pair(1000, 800), std::pair<float, float> maxSpeed = std::make_pair(100, 100));
+
+    friend std::ostream &operator<<(std::ostream &os, const Entity &entity);
 
     const std::pair<float, float> &getPosition() const;
 
@@ -27,6 +31,11 @@ private:
     int _mass;
     std::pair<float, float> _position;
     std::pair<float, float> _speed;
+    sf::Color _color;
+public:
+    const sf::Color &getColor() const;
+
+    void setColor(const sf::Color &color);
 };
 
 

@@ -5,14 +5,18 @@
 #ifndef GRAVITYSIMULATOR_RENDERSYSTEM_HPP
 #define GRAVITYSIMULATOR_RENDERSYSTEM_HPP
 
+#include <list>
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "Entity.hpp"
 
 class RenderSystem {
 private:
     sf::RenderWindow _window;
+    sf::VertexArray _vertex;
+
 public:
-    RenderSystem();
+    RenderSystem(size_t nbrEntities);
     ~RenderSystem();
 
     void createWindow(int width, int length, const std::string &title);
@@ -20,7 +24,7 @@ public:
     void closeWindow();
     bool isOpen() const;
     void handleEvent();
-    void draw();
+    void draw(const std::vector<Entity> &entities);
 
 };
 

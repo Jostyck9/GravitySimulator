@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/GravitySimulator.dir/src/Entity.cpp.o"
   "CMakeFiles/GravitySimulator.dir/src/RenderSystem.cpp.o"
+  "CMakeFiles/GravitySimulator.dir/src/Timer.cpp.o"
   "CMakeFiles/GravitySimulator.dir/src/main.cpp.o"
   "bin/GravitySimulator"
   "bin/GravitySimulator.pdb"
