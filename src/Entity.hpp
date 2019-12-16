@@ -11,7 +11,7 @@
 
 class Entity {
 public:
-    Entity(int maxMass = 100, std::pair<float, float> maxPosition = std::make_pair(1000, 800), std::pair<float, float> maxSpeed = std::make_pair(100, 100));
+    Entity(int maxMass = 100, std::pair<float, float> maxPosition = std::make_pair(1000, 800), std::pair<float, float> maxSpeed = std::make_pair(0, 0));
 
     friend std::ostream &operator<<(std::ostream &os, const Entity &entity);
 
@@ -26,6 +26,8 @@ public:
     void setSpeed(const std::pair<float, float> &speed);
 
     void setPosition(const std::pair<float, float> &position);
+
+    void attract(Entity &other);
 
 private:
     int _mass;

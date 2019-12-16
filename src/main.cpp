@@ -2,7 +2,6 @@
 #include <random>
 #include <ctime>
 #include <iostream>
-#include <list>
 #include "Timer.hpp"
 #include "RenderSystem.hpp"
 #include "Entity.hpp"
@@ -11,14 +10,20 @@ void update(std::vector<Entity> &entities)
 {
     static Timer myTimer;
 
-    for (auto &item : entities) {
-        auto position = item.getPosition();
-        auto speed = item.getSpeed();
+    for (size_t i = 0; i < entities.size(); ++i) {
+        auto position = entities[i].getPosition();
+        auto speed = entities[i].getSpeed();
 
-        position.first += speed.first * myTimer.getElapsedSeconds();
-        position.second += speed.second * myTimer.getElapsedSeconds();
+        for (int j = i + 1; j < entities.size(); ++j) {
+            entities[i].attract(entities[j]);
+        }
 
-        item.setPosition(position);
+        //position.first += speed.first * myTimer.getElapsedSeconds();
+        //position.second += speed.second * myTimer.getElapsedSeconds();
+        position.first += speed.first;
+        position.second += speed.second;
+
+        entities[i].setPosition(position);
     }
     myTimer.restart();
 }

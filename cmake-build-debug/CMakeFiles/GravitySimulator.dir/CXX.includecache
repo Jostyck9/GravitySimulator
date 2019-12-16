@@ -21,6 +21,8 @@ SFML/Config.hpp
 /home/hugo/repo/github/GravitySimulator/src/Entity.cpp
 random
 -
+iostream
+-
 Entity.hpp
 /home/hugo/repo/github/GravitySimulator/src/Entity.hpp
 

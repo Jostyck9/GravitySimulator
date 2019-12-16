@@ -3,12 +3,13 @@
 //
 
 #include <random>
+#include <iostream>
 #include "Entity.hpp"
 
 Entity::Entity(int maxMass, std::pair<float, float> maxPosition, std::pair<float, float> maxSpeed) :
                 _mass(rand() % maxMass),
                 _position(rand() % static_cast<int>(maxPosition.first), rand() % static_cast<int>(maxPosition.second)),
-                _speed(rand() % static_cast<int>(maxSpeed.first), rand() % static_cast<int>(maxSpeed.second)) {
+                _speed(rand() % static_cast<int>((maxSpeed.first) == 0) ? 1 : maxSpeed.first, rand() % static_cast<int>((maxSpeed.second) == 0) ? 1 : maxSpeed.second) {
 
     static size_t i = 0;
 
@@ -72,4 +73,26 @@ void Entity::setColor(const sf::Color &color) {
 std::ostream &operator<<(std::ostream &os, const Entity &entity) {
     os << "_position: " << entity._position.first << " " << entity._position.second;
     return os;
+}
+
+void Entity::attract(Entity &other) {
+    std::pair<float, float> direction;
+    float force = 0;
+    float g = 6.67430 * std::pow(10, -7);
+    float distance = 0;
+
+    direction.first = (other.getPosition().first - _position.first);
+    direction.second = (other.getPosition().second - _position.second);
+
+    distance = std::sqrt(std::pow(direction.first, 2) + std::pow(direction.second, 2));
+
+    if (direction.first != 0)
+        direction.first = direction.first / std::abs(direction.first);
+    if (direction.second != 0)
+        direction.second = direction.second / std::abs(direction.second);
+
+    force = (g) * (_mass * other.getMass()) / distance;
+    _speed.first += direction.first * force;
+    _speed.second += direction.second * force;
+    other.setSpeed(std::make_pair(other.getSpeed().first + (direction.first * force * -1), other.getSpeed().second + (direction.second * force * -1)));
 }
